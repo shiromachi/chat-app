@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2020_09_23_055545) do
 
-  create_table "massages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "content"
     t.bigint "user_id"
     t.bigint "room_id"
@@ -50,8 +50,8 @@ ActiveRecord::Schema.define(version: 2020_09_23_055545) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "massages", "rooms"
-  add_foreign_key "massages", "users"
+  add_foreign_key "messages", "rooms"
+  add_foreign_key "messages", "users"
   add_foreign_key "room_users", "rooms"
   add_foreign_key "room_users", "users"
 end
